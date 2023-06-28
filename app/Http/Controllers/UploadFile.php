@@ -31,13 +31,13 @@ class UploadFile extends Controller
         }
 
         $file->store('storage/uploads');
-        dump($file);
+        dump($file, Storage::url($file->hashName()));
         //Storage::put('app/assets', $contents);
         return response()->json([
             'success' => true,
             // TODO src
             'message' => 'File uploaded!',
-            'url' => Storage::url('media/get/'.$file->hashName())
+            'src' => Storage::url($file->hashName())
         ]);
     }
 
