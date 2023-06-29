@@ -17,4 +17,12 @@ class Page extends Model
         'title',
         'body'
     ];
+
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }
