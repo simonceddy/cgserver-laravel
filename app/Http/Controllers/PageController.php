@@ -9,9 +9,9 @@ class PageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:sanctum', [
-            'except' => ['index', 'show']
-        ]);
+        // $this->middleware('auth:sanctum', [
+        //     'except' => ['index', 'show']
+        // ]);
     }
 
      /**
@@ -52,10 +52,14 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
+        // dump('here');
         $data = $request->post();
         $page->fill($data);
         $page->save();
-        return response()->json($page);
+        return response()->json([
+            'data' => $page,
+            'success' => true
+        ]);
     }
 
     /**

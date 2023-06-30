@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UploadFile;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{path?}', FrontController::class);
 
-Route::post('files/upload', UploadFile::class)->middleware('auth');
+Route::post('/files/upload', UploadFile::class)
+    // ->middleware('auth')
+    ;
+Route::get('/admin/{path?}', AdminController::class);
+Route::get('/{path?}', FrontController::class);

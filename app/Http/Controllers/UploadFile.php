@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class UploadFile extends Controller
@@ -15,6 +16,7 @@ class UploadFile extends Controller
      */
     public function __invoke(Request $request)
     {
+        Log::info('file upload received');
         if (!$request->ajax()) {
             return response()->json([
                 'success' => false,
@@ -31,7 +33,7 @@ class UploadFile extends Controller
         }
 
         $file->store('storage/uploads');
-        dump($file, Storage::url($file->hashName()));
+        // dump($file, Storage::url($file->hashName()));
         //Storage::put('app/assets', $contents);
         return response()->json([
             'success' => true,
