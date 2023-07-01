@@ -31,5 +31,8 @@ Route::post('/tokens/create', function (Request $request) {
 Route::post('/files/upload', UploadFile::class)
     // ->middleware('auth')
     ;
+Route::get('/ttt', function () {
+    return view('testing');
+});
 Route::get('/admin/{path?}', AdminController::class);
 Route::get('/{path?}', FrontController::class);
