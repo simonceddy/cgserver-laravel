@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UploadFile;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// TODO sort this out for production
+Route::get('/token', function () {
+    return csrf_token();
+});
+
+Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+
+    return ['token' => $token->plainTextToken];
+});
 
 Route::post('/files/upload', UploadFile::class)
     // ->middleware('auth')

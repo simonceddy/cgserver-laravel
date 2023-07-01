@@ -17,12 +17,12 @@ class UploadFile extends Controller
     public function __invoke(Request $request)
     {
         Log::info('file upload received');
-        if (!$request->ajax()) {
-            return response()->json([
-                'success' => false,
-                'error' => []
-            ]);
-        }
+        // if (!$request->ajax()) {
+        //     return response()->json([
+        //         'success' => false,
+        //         'error' => 'NO AJ'
+        //     ]);
+        // }
         $file = $request->file('uploaded-file');
 
         if ($file === null) {
@@ -32,14 +32,14 @@ class UploadFile extends Controller
             ]);
         }
 
-        $file->store('storage/uploads');
+        $file->store('public');
         // dump($file, Storage::url($file->hashName()));
         //Storage::put('app/assets', $contents);
         return response()->json([
             'success' => true,
             // TODO src
             'message' => 'File uploaded!',
-            'src' => Storage::url($file->hashName())
+            'src' => $file->hashName()
         ]);
     }
 
