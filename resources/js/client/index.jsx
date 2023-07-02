@@ -1,11 +1,31 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+import './styles';
+import App from './App';
+import routes from './routes';
+// import reportWebVitals from './reportWebVitals';
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: routes.map((route) => ({
+      index: route.path === '/',
+      path: route.path === '/' ? undefined : route.path,
+      element: route.element,
+    }))
+  }
+]);
 
 root.render(
   <React.StrictMode>
-    <div>Helllllllooooo</div>
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// reportWebVitals();
