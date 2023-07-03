@@ -5,7 +5,7 @@ import AppHeading from './components/AppHeading';
 import Content from './components/Content';
 import Header from './components/Header';
 import Layout from './components/Layout';
-import { APP_TITLE } from './consts';
+import { APP_TITLE } from '../shared/consts';
 import routes from './routes';
 import CSSTransition from './containers/CSSTransition';
 import Footer from './components/Footer';

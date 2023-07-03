@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import parseHtml from 'html-react-parser';
 import Page from '../components/Page';
 import PageHeading from '../components/PageHeading';
+import { API_URL } from '../../shared/consts';
 
 function PageContainer({ slug = 'home' }) {
   const [state, setState] = useState({
@@ -14,7 +15,7 @@ function PageContainer({ slug = 'home' }) {
 
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:8888/api/page/${slug}`, {
+        const res = await fetch(`${API_URL}/page/${slug}`, {
           // TODO headers
         });
         if (res.status !== 200) setState({ ...state, title: '404 Not Found' }); else {

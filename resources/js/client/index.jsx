@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import './styles';
+import '../shared/styles';
 import App from './App';
 import routes from './routes';
 // import reportWebVitals from './reportWebVitals';

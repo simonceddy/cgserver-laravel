@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "tailwind": "tailwind -i resources/js/shared/styles/tailwind.src.css -o resources/js/shared/styles/tailwind.css",
+        "tailwatch": "tailwind -w -i resources/js/shared/styles/tailwind.src.css -o resources/js/shared/styles/tailwind.css"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",

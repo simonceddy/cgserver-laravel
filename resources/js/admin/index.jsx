@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { store } from './app/store';
 import App from './App';
-import './styles';
+import '../shared/styles';
 import routes from './routes';
 
 const container = document.getElementById('root');

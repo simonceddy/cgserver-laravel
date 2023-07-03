@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MEDIA_URL } from '../consts';
+import { MEDIA_URL } from '../../shared/consts';
 
 export function srcUrl(src) {
   return `${MEDIA_URL}/get/${src}`;

@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { API_URL } from '../../consts';
+import { API_URL } from '../../../shared/consts';
 import { axiosBaseQuery } from '../../util/axiosClient';
 
 export const pagesAPI = createApi({
