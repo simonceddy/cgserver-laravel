@@ -5,7 +5,7 @@ import { useFetchPageQuery, useUpdatePageMutation } from './pagesAPI';
 import ErrorMessage from '../../components/ErrorMessage';
 // import UploadFile from '../upload/UploadFile';
 import ErrorBoundary from '../../containers/ErrorBoundary';
-import Button from '../../components/Button';
+import Button from '../../../shared/components/Button';
 
 function EditPage() {
   const { slug } = useParams();

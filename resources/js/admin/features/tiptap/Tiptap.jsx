@@ -14,7 +14,7 @@ import ImageForm from './components/ImageForm';
 import { readFileAsDataURL } from './support';
 import ImageProps from './components/ImageProps';
 import { upload } from '../../util/media';
-import Button from '../../components/Button';
+import Button from '../../../shared/components/Button';
 
 // EditorView.prototype.updateState = function updateState(state) {
 //   if (!this.docView) return; // This prevents the matchesNode error on hot reloads

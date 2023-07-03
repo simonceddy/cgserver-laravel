@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../../../components/Button';
+import Button from '../../../../shared/components/Button';
 import Modal from '../../../components/Modal';
 
 function ImageProps({

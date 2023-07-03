@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UploadFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,10 +25,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/files/upload', UploadFile::class)
-    // ->middleware('auth')
+    ->middleware('auth')
     ;
-Route::get('/login', '\\App\\Http\\Controllers\\LoginController@show');
+Route::get('/login', '\\App\\Http\\Controllers\\LoginController@show')->name('login');
 
 Route::post('/login', '\\App\\Http\\Controllers\\LoginController@authenticate');
-Route::get('/admin/{path?}', AdminController::class);
+
+Route::get('/logout', LogoutController::class)->name('logout');
+
+Route::get('/admin/{path?}', AdminController::class)
+    ->middleware('auth')
+    ;
 Route::get('/{path?}', FrontController::class);

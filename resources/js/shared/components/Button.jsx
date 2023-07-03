@@ -1,8 +1,10 @@
-function Button({ children, disabled = false, onClick }) {
+function Button({
+  children, disabled = false, onClick, submits = false
+}) {
   return (
     <button
       className={`border-2 border-black ${disabled ? '' : 'hover:border-cornflower-blue active:border-pastel-green'} p-2 rounded-md m-2 relative`}
-      type="button"
+      type={submits ? 'submit' : 'button'}
       disabled={disabled}
       onClick={onClick}
     >
