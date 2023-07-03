@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    // TODO login frontend
+    public function show()
+    {
+        return view('login');
+    }
+
     /**
      * Handle an authentication attempt.
      */
@@ -21,11 +27,11 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('admin');
         }
 
         return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
+            'username' => 'Invalid login details.',
         ])->onlyInput('username');
     }
 }

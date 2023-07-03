@@ -26,5 +26,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/files/upload', UploadFile::class)
     // ->middleware('auth')
     ;
+Route::get('/login', '\\App\\Http\\Controllers\\LoginController@show');
+
+Route::post('/login', '\\App\\Http\\Controllers\\LoginController@authenticate');
 Route::get('/admin/{path?}', AdminController::class);
 Route::get('/{path?}', FrontController::class);

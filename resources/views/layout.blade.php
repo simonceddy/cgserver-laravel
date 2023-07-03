@@ -12,8 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Quintessential&family=Sen:wght@400;700&display=swap" rel="stylesheet">
-    <title>React App</title>
-    <link href="/static/css/main.9b2bc0e9.css" rel="stylesheet"></head>
+    <title>@yield('title', 'Christine Grayden')</title>
+    @viteReactRefresh
+    @yield('vite')
+</head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

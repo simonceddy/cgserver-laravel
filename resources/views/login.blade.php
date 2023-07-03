@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Christine Grayden')
+@section('title', 'Login')
 @section('vite')
     @vite('resources/js/app.jsx')
 @endsection
