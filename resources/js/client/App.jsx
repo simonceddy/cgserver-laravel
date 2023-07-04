@@ -34,7 +34,7 @@ function App() {
             classNames="page"
             unmountOnExit
           >
-            <div ref={nodeRef} className="page flex-1 w-auto col justify-start items-center">
+            <div ref={nodeRef} className="page flex-1 h-[70%] w-auto col justify-start items-center">
               {outlet}
             </div>
           </CSSTransition>

@@ -1,4 +1,6 @@
-import { NavLink, useLocation, useOutlet } from 'react-router-dom';
+import {
+  NavLink, useLocation, useOutlet
+} from 'react-router-dom';
 import { SwitchTransition } from 'react-transition-group';
 import routes from './routes';
 import CSSTransition from './containers/CSSTransition';
@@ -20,6 +22,12 @@ function App() {
             {label}
           </NavLink>
         ) : null))}
+        <a
+          className="mx-2 my-1 p-1 text-cornflower-blue font-bold text-3xl font-cursive hover:underline"
+          href="/logout"
+        >
+          Logout
+        </a>
       </div>
       <div className="col justify-start items-center flex-1 w-full md:w-4/5 xl:w-2/3 relative border-2 rounded-md border-cornflower-blue">
         <SwitchTransition>

@@ -40,7 +40,7 @@ function PageContainer({ slug = 'home' }) {
       <PageHeading>
         {state.title}
       </PageHeading>
-      <div className="w-full">
+      <div className="w-full flex-1">
         {parseHtml(state.body)}
       </div>
     </Page>
