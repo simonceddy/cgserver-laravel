@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
+        "@tiptap/core": "^2.0.3",
         "@tiptap/extension-character-count": "^2.0.3",
         "@tiptap/extension-color": "^2.0.3",
         "@tiptap/extension-font-family": "^2.0.3",

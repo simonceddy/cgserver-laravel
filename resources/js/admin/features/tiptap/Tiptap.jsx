@@ -4,14 +4,11 @@ import StarterKit from '@tiptap/starter-kit';
 import CharacterCount from '@tiptap/extension-character-count';
 import Link from '@tiptap/extension-link';
 import './Tiptap.scss';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import MenuBar from './MenuBar';
 import CustomHeading from './ext/CustomHeadings';
 import CustomAlign from './ext/CustomAlign';
 import { TipTapCustomImage } from './Image';
-import ImageForm from './components/ImageForm';
-import { readFileAsDataURL } from './support';
 import ImageProps from './components/ImageProps';
 import { upload } from '../../util/media';
 import Button from '../../../shared/components/Button';
@@ -60,8 +57,6 @@ function Tiptap({
     },
     content: content || '',
     onUpdate: ({ editor: e }) => {
-      // console.log(e.getText());
-      // console.log(e.getHTML(), transaction);
       if (!modified) setModified(true);
       if (setContent) setContent(e.getHTML());
     },
@@ -83,23 +78,6 @@ function Tiptap({
     //   }
     // },
   });
-
-  // const handleUpload = async (f) => {
-  //   const result = await readFileAsDataURL(f);
-
-  //   return result;
-  // };
-
-  // useEffect(() => {
-  //   async function handleImageUpload() {
-  //     if (file && editor) {
-  //       const src = await handleUpload(file);
-  //       console.log({ src });
-  //       editor.chain().focus()?.setImage({ src })?.run();
-  //     }
-  //   }
-  //   handleImageUpload();
-  // }, [file]);
 
   const setImageAtrr = (attr = {}) => {
     const newImgNode = editor.schema.nodes.image.create(attr);
@@ -135,42 +113,6 @@ function Tiptap({
           if (img.src) {
             setSelectedImg(img);
           }
-        }}
-        setWidth={(v) => {
-          setImageAtrr({
-            ...selectedImg,
-            width: Number(v)
-          });
-          const img = editor.getAttributes('image');
-          if (img.src) {
-            setSelectedImg(img);
-          } else {
-            console.log('add image');
-          }
-          // TODO Figure out how to do this
-          // editor.chain().focus().setImage({
-          //   ...selectedImg,
-          //   width: Number(v)
-          // }).run();
-          // console.log(editor.chain().focus());
-        }}
-        setHeight={(v) => {
-          setImageAtrr({
-            ...selectedImg,
-            height: Number(v)
-          });
-          const img = editor.getAttributes('image');
-          if (img.src) {
-            setSelectedImg(img);
-          } else {
-            console.log('add image');
-          }
-          // TODO Figure out how to do this
-          // editor.chain().focus().setImage({
-          //   ...selectedImg,
-          //   width: Number(v)
-          // }).run();
-          // console.log(editor.chain().focus());
         }}
         onClose={() => setSelectedImg(null)}
         image={selectedImg}
