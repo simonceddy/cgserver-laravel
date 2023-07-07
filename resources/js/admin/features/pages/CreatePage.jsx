@@ -8,13 +8,14 @@ import Tiptap from '../tiptap/Tiptap';
 
 function CreatePage() {
   const [body, setBody] = useState('');
+  const [title, setTitle] = useState('');
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
   const [createPage, { isSuccess, error, isLoading }] = useAddPageMutation();
 
   const saveData = async () => {
     const result = await createPage({
-      title: 'test title', body
+      title, body
     });
     if (result.data.success) {
       setMessage('Saved!');
@@ -40,39 +41,35 @@ function CreatePage() {
             </button>
           </div>
           )}
-          <h1 className="text-xl m-2">
-            Editing
-            <span className="ml-1 font-bold">
-              Title input goes here
+          <label htmlFor="title-input" className="text-xl m-2">
+            <span className="mr-2">
+              Title
             </span>
-          </h1>
+            <input
+              type="text"
+              name="title-input"
+              id="title-input"
+              className="p-1 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </label>
           {/* <UploadFile
           onUpload={() => {
             setMessage('uploading!');
           }}
         /> */}
           <div className="row w-full m-2 h-[400px]">
-            <Tiptap content={body} setContent={setBody} />
-          </div>
-          <div>
-            <button
-              className="border-2 border-black hover:border-cornflower-blue active:border-pastel-green p-2 rounded-md m-2"
-              type="button"
-              onClick={() => {
-                saveData();
-              }}
-            >
-              Save
-            </button>
-            <button
-              className="border-2 border-black hover:border-cornflower-blue active:border-pastel-green p-2 rounded-md m-2"
-              type="button"
-              onClick={() => {
+            <Tiptap
+              saveData={saveData}
+              onClose={() => {
                 navigate('/pages');
               }}
-            >
-              Cancel
-            </button>
+              content={body}
+              setContent={setBody}
+            />
           </div>
         </div>
       </ErrorBoundary>

@@ -5,6 +5,7 @@ import CharacterCount from '@tiptap/extension-character-count';
 import Link from '@tiptap/extension-link';
 import './Tiptap.scss';
 import { useState } from 'react';
+import TextStyle from '@tiptap/extension-text-style';
 import MenuBar from './MenuBar';
 import CustomHeading from './ext/CustomHeadings';
 import CustomAlign from './ext/CustomAlign';
@@ -12,6 +13,7 @@ import { TipTapCustomImage } from './Image';
 import ImageProps from './components/ImageProps';
 import { upload } from '../../util/media';
 import Button from '../../../shared/components/Button';
+import CustomFontFamily from './ext/CustomFontFamily';
 
 // EditorView.prototype.updateState = function updateState(state) {
 //   if (!this.docView) return; // This prevents the matchesNode error on hot reloads
@@ -36,6 +38,7 @@ function Tiptap({
           }
         }
       }),
+      TextStyle,
       Link.configure({
         HTMLAttributes: {
           class: 'hover:underline cursor-pointer'
@@ -48,6 +51,7 @@ function Tiptap({
       // Image,
       TipTapCustomImage(upload),
       CharacterCount,
+      CustomFontFamily,
     ],
     editorProps: {
       attributes: {
@@ -87,8 +91,6 @@ function Tiptap({
 
   if (!editor) return <div>An issue prevented the editor from starting</div>;
 
-  // console.log(editor);
-
   return (
     <>
       {label && (
@@ -119,7 +121,7 @@ function Tiptap({
       />
       )}
       <div
-        className="border-2 col font-bold border-slate-400 dark:border-slate-600 w-full h-[500px]"
+        className="border-2 col border-slate-400 dark:border-slate-600 w-full h-[500px]"
       >
         <div className="col w-full">
           <MenuBar

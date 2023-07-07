@@ -18,19 +18,21 @@ import {
   FaFileImage as ImageIcon,
   FaLink as LinkIcon,
 } from 'react-icons/fa';
-import {
-  // RiH1 as H1Icon,
-  RiH2 as H2Icon,
-  RiH3 as H3Icon,
-  RiH4 as H4Icon,
-  RiH5 as H5Icon,
-  // RiH6 as H6Icon,
-} from 'react-icons/ri';
+// import {
+//   // RiH1 as H1Icon,
+//   RiH2 as H2Icon,
+//   RiH3 as H3Icon,
+//   RiH4 as H4Icon,
+//   RiH5 as H5Icon,
+//   // RiH6 as H6Icon,
+// } from 'react-icons/ri';
 import {
   GoHorizontalRule as LineIcon
 } from 'react-icons/go';
 import { useCallback } from 'react';
 import TiptapMenuBtn from './components/TiptapMenuBtn';
+import TextSizeSelector from './components/TextSizeSelector';
+import FontSelector from './components/FontSelector';
 
 /**
  * @typedef {object} props
@@ -113,7 +115,7 @@ function MenuBar({
       >
         <H1Icon size={18} />
       </TiptapMenuBtn> */}
-      <TiptapMenuBtn
+      {/* <TiptapMenuBtn
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
         className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
       >
@@ -136,7 +138,9 @@ function MenuBar({
         className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
       >
         <H5Icon size={18} />
-      </TiptapMenuBtn>
+      </TiptapMenuBtn> */}
+      <TextSizeSelector editor={editor} />
+      <FontSelector editor={editor} />
       {/* <TiptapMenuBtn
         onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
         className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
