@@ -70,7 +70,10 @@ function EditPage() {
           {body && (
           <Tiptap
             content={body}
-            setContent={setBody}
+            setContent={(html) => {
+              if (message) setMessage(null);
+              setBody(html);
+            }}
             saveData={saveData}
             onClose={() => {
               navigate('/pages');

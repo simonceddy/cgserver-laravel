@@ -2,6 +2,12 @@ import { useState } from 'react';
 import Button from '../../../../shared/components/Button';
 import Modal from '../../../components/Modal';
 
+const wrapOptions = [
+  { label: 'Wrap right', value: 'float-right ml-2' },
+  { label: 'No wrap', value: 'float-none' },
+  { label: 'Wrap left', value: 'float-left mr-2' },
+];
+
 function ImageProps({
   image, setImage, onClose
 }) {
@@ -9,10 +15,12 @@ function ImageProps({
   const [attributes, setAttributes] = useState({
     ...image
   });
+
+  console.log(attributes);
   return (
     <Modal>
       <div
-        className="col p-2 rounded-lg bg-aqua-spring border-2 border-cornflower-blue z-50"
+        className="col p-2 rounded-lg fl bg-aqua-spring border-2 border-cornflower-blue z-50"
       >
         <label
           className="row w-full my-2 justify-between items-center"
@@ -60,7 +68,25 @@ function ImageProps({
             px
           </span>
         </label>
-        {}
+        <label
+          className="row w-full my-2 justify-between items-center"
+          htmlFor="wrap-input"
+        >
+          <span>
+            Wrap:
+          </span>
+          <select
+            name="wrap-input"
+            id="wrap-input"
+            onChange={(e) => {
+              setAttributes({ ...attributes, class: e.target.value });
+            }}
+          >
+            {wrapOptions.map(({ label, value }) => (
+              <option key={`wrap-option-${value}`} value={value} label={label} />
+            ))}
+          </select>
+        </label>
         <Button onClick={() => {
           setImage(attributes);
           if (onClose) onClose();

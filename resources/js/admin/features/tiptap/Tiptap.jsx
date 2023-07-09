@@ -105,11 +105,12 @@ function Tiptap({
       /> */}
       {selectedImg && (
       <ImageProps
-        setImage={({ width, height }) => {
+        setImage={({ width, height, class: c }) => {
           setImageAtrr({
             ...selectedImg,
             width,
-            height
+            height,
+            class: c || selectedImg.class,
           });
           const img = editor.getAttributes('image');
           if (img.src) {

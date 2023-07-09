@@ -65,17 +65,17 @@ export const TipTapCustomImage = (uploadFn) => Node.create({
       },
       class: {
         default: null,
-        // renderHTML(/* attributes */) {
-        //   // console.log(attributes);
-        //   return {
-        //     class: 'w-96 max-h-96'
-        //   };
-        // }
+        renderHTML(attributes) {
+          console.log(attributes);
+          return {
+            class: attributes.class
+          };
+        }
       },
       width: {
         default: null,
         renderHTML(attributes) {
-          console.log(attributes);
+          // console.log(attributes);
           return {
             width: attributes.width || 320
           };
@@ -137,6 +137,7 @@ export const TipTapCustomImage = (uploadFn) => Node.create({
         find: IMAGE_INPUT_REGEX,
         type: this.type,
         getAttributes: (match) => {
+          console.log(match);
           const [, alt, src, title,] = match;
           return {
             src,
