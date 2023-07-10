@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./resources/js/**/*.{js,jsx}'],
+  safelist: ['mx-auto'],
   theme: {
     colors: {
       transparent: 'transparent',

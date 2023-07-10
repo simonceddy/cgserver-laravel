@@ -34,6 +34,25 @@ import { uploadImagePlugin } from './uploadImage';
 
 const IMAGE_INPUT_REGEX = /!\[(.+|:?)\]\((\S+)(?:(?:\s+)["'](\S+)["'])?\)/;
 
+const classNameFactory = (attributes) => {
+  let classNames = '';
+  if (attributes.float) {
+    switch (attributes.float) {
+      case 0:
+        classNames += 'float-none';
+        break;
+      case 1:
+        classNames += 'float-right ml-2';
+        break;
+      case 2:
+        classNames += 'float-left mr-2';
+        break;
+      default:
+    }
+  }
+  return classNames;
+};
+
 export const TipTapCustomImage = (uploadFn) => Node.create({
   name: 'image',
 
@@ -68,7 +87,7 @@ export const TipTapCustomImage = (uploadFn) => Node.create({
         renderHTML(attributes) {
           console.log(attributes);
           return {
-            class: attributes.class
+            class: classNameFactory(attributes)
           };
         }
       },
@@ -90,6 +109,9 @@ export const TipTapCustomImage = (uploadFn) => Node.create({
           };
         }
       },
+      float: {
+        default: 0
+      }
     };
   },
 

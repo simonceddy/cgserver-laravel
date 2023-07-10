@@ -3,9 +3,9 @@ import Button from '../../../../shared/components/Button';
 import Modal from '../../../components/Modal';
 
 const wrapOptions = [
-  { label: 'Wrap right', value: 'float-right ml-2' },
-  { label: 'No wrap', value: 'float-none' },
-  { label: 'Wrap left', value: 'float-left mr-2' },
+  { label: 'No wrap', value: 0 },
+  { label: 'Wrap right', value: 1 },
+  { label: 'Wrap left', value: 2 },
 ];
 
 function ImageProps({
@@ -78,8 +78,9 @@ function ImageProps({
           <select
             name="wrap-input"
             id="wrap-input"
+            value={attributes.float || 0}
             onChange={(e) => {
-              setAttributes({ ...attributes, class: e.target.value });
+              setAttributes({ ...attributes, float: Number(e.target.value) });
             }}
           >
             {wrapOptions.map(({ label, value }) => (
