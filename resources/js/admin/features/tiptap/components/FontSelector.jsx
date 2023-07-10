@@ -1,4 +1,4 @@
-import DropdownMenu from './DropdownMenu';
+import DropdownMenu from '../../../components/Forms/DropdownMenu';
 
 const options = [
   { value: 'Sen', label: 'Sen', className: 'font-sans' },
