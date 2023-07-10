@@ -33,14 +33,11 @@ export const pagesAPI = createApi({
       invalidatesTags: ['Page']
     }),
     updatePage: builder.mutation({
-      query: (data) => {
-        console.log(`${API_URL}/page/${data.slug}`);
-        return ({
-          url: `/${data.slug}`,
-          method: 'PUT',
-          data: { ...data }
-        });
-      },
+      query: (data) => ({
+        url: `/${data.slug}`,
+        method: 'PUT',
+        data: { ...data }
+      }),
       invalidatesTags: ['Page']
     }),
     deletePage: builder.mutation({

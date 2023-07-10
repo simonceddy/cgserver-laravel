@@ -21,7 +21,7 @@ function EditPage() {
     const result = await updatePage({
       title: data.title, slug: data.slug, id: data.id, body
     });
-    console.log(result);
+    // console.log(result);
     if (result.data?.success) {
       refetch();
       setMessage('Saved!');

@@ -36,6 +36,11 @@ function Tiptap({
             // TODO update colour classes
             class: 'h-px my-8 bg-black border-0'
           }
+        },
+        bulletList: {
+          HTMLAttributes: {
+            class: 'list-disc list-outside'
+          }
         }
       }),
       TextStyle,

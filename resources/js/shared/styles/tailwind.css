@@ -741,6 +741,14 @@ video {
   cursor: pointer;
 }
 
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .flex-row {
   flex-direction: row;
 }

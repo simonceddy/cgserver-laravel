@@ -39,13 +39,13 @@ const classNameFactory = (attributes) => {
   if (attributes.float) {
     switch (attributes.float) {
       case 0:
-        classNames += 'float-none';
+        classNames += ' float-none';
         break;
       case 1:
-        classNames += 'float-right ml-2';
+        classNames += ' float-right ml-2';
         break;
       case 2:
-        classNames += 'float-left mr-2';
+        classNames += ' float-left mr-2';
         break;
       default:
     }
@@ -85,7 +85,7 @@ export const TipTapCustomImage = (uploadFn) => Node.create({
       class: {
         default: null,
         renderHTML(attributes) {
-          console.log(attributes);
+          // console.log(attributes);
           return {
             class: classNameFactory(attributes)
           };

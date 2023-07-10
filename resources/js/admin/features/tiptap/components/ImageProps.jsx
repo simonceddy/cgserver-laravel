@@ -76,6 +76,7 @@ function ImageProps({
             Wrap:
           </span>
           <select
+            className="p-1 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green"
             name="wrap-input"
             id="wrap-input"
             value={attributes.float || 0}

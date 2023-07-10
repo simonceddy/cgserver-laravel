@@ -1,10 +1,10 @@
 import DropdownMenu from './DropdownMenu';
 
 const options = [
-  { value: 'Sen', label: 'Sen' },
-  { value: 'Moon Dance', label: 'Moon Dance' },
-  { value: 'Quintessential', label: 'Quintessential' },
-  { value: 'monospace', label: 'monospace' },
+  { value: 'Sen', label: 'Sen', className: 'font-sans' },
+  { value: 'Moon Dance', label: 'Moon Dance', className: '' },
+  { value: 'Quintessential', label: 'Quintessential', className: '' },
+  { value: 'monospace', label: 'monospace', className: 'font-mono' },
 ];
 
 /**
@@ -16,6 +16,7 @@ const options = [
  * @param {props} props
  */
 function FontSelector({ editor }) {
+  console.log(editor.getAttributes('fontFamily'));
   return (
     <div>
       <DropdownMenu

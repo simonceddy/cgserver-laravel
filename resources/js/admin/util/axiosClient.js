@@ -4,8 +4,7 @@ import { SERVER_URL } from '../../shared/consts';
 axios.defaults.withCredentials = true;
 
 (async () => {
-  const res = await axios.get(`${SERVER_URL}/sanctum/csrf-cookie`);
-  console.log(res);
+  await axios.get(`${SERVER_URL}/sanctum/csrf-cookie`);
 })();
 
 export const axiosBaseQuery = ({ baseUrl } = { baseUrl: '' }) => async ({
