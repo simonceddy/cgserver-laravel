@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -191,6 +191,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
   font-size: 100%;
   /* 1 */
   font-weight: inherit;
@@ -338,6 +342,14 @@ ul,
 menu {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
   padding: 0;
 }
 
@@ -840,7 +852,7 @@ video {
 
 .border-cornflower-blue {
   --tw-border-opacity: 1;
-  border-color: rgb(76 139 198 / var(--tw-border-opacity));
+  border-color: rgb(93 171 244 / var(--tw-border-opacity));
 }
 
 .border-dandelion {
@@ -859,7 +871,7 @@ video {
 }
 
 .bg-cornflower-blue\/30 {
-  background-color: rgb(76 139 198 / 0.3);
+  background-color: rgb(93 171 244 / 0.3);
 }
 
 .bg-white {
@@ -907,6 +919,10 @@ video {
 
 .font-heading {
   font-family: Quintessential, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-sans {
@@ -958,12 +974,12 @@ video {
 
 .text-cornflower-blue {
   --tw-text-opacity: 1;
-  color: rgb(76 139 198 / var(--tw-text-opacity));
+  color: rgb(93 171 244 / var(--tw-text-opacity));
 }
 
 .text-pastel-green {
   --tw-text-opacity: 1;
-  color: rgb(105 192 120 / var(--tw-text-opacity));
+  color: rgb(132 238 149 / var(--tw-text-opacity));
 }
 
 .filter {
@@ -972,7 +988,7 @@ video {
 
 .hover\:border-cornflower-blue:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(76 139 198 / var(--tw-border-opacity));
+  border-color: rgb(93 171 244 / var(--tw-border-opacity));
 }
 
 .hover\:underline:hover {
@@ -981,7 +997,7 @@ video {
 
 .focus\:border-pastel-green:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(105 192 120 / var(--tw-border-opacity));
+  border-color: rgb(132 238 149 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -991,12 +1007,12 @@ video {
 
 .active\:border-pastel-green:active {
   --tw-border-opacity: 1;
-  border-color: rgb(105 192 120 / var(--tw-border-opacity));
+  border-color: rgb(132 238 149 / var(--tw-border-opacity));
 }
 
 .active\:text-cornflower-blue:active {
   --tw-text-opacity: 1;
-  color: rgb(76 139 198 / var(--tw-text-opacity));
+  color: rgb(93 171 244 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
