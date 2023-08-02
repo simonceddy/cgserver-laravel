@@ -14,6 +14,7 @@ import ImageProps from './components/ImageProps';
 import { upload } from '../../util/media';
 import Button from '../../../shared/components/Button';
 import CustomFontFamily from './ext/CustomFontFamily';
+import ImageForm from './components/ImageForm';
 
 // EditorView.prototype.updateState = function updateState(state) {
 //   if (!this.docView) return; // This prevents the matchesNode error on hot reloads
@@ -26,6 +27,7 @@ function Tiptap({
   // const [file, setFile] = useState(null);
   const [selectedImg, setSelectedImg] = useState(null);
   const [modified, setModified] = useState(false);
+  const [showImgUpload, setShowImgUpload] = useState(false);
 
   const editor = useEditor({
     extensions: [
@@ -103,28 +105,35 @@ function Tiptap({
         {label}
       </div>
       )}
-      {/* <ImageForm
-        onInput={(e) => {
-          console.log(e.target.files);
-        }}
-      /> */}
+      {showImgUpload && (
+        <ImageForm
+          upload={upload}
+          editor={editor}
+          onInput={(file) => {
+            console.log(file);
+          }}
+          onClose={() => {
+            setShowImgUpload(false);
+          }}
+        />
+      )}
       {selectedImg && (
-      <ImageProps
-        setImage={({ width, height, float }) => {
-          setImageAtrr({
-            ...selectedImg,
-            width,
-            height,
-            float
-          });
-          const img = editor.getAttributes('image');
-          if (img.src) {
-            setSelectedImg(img);
-          }
-        }}
-        onClose={() => setSelectedImg(null)}
-        image={selectedImg}
-      />
+        <ImageProps
+          setImage={({ width, height, float }) => {
+            setImageAtrr({
+              ...selectedImg,
+              width,
+              height,
+              float
+            });
+            const img = editor.getAttributes('image');
+            if (img.src) {
+              setSelectedImg(img);
+            }
+          }}
+          onClose={() => setSelectedImg(null)}
+          image={selectedImg}
+        />
       )}
       <div
         className="border-2 col border-slate-400 dark:border-slate-600 w-full h-[500px]"
@@ -135,6 +144,7 @@ function Tiptap({
               setSelectedImg(i);
             }}
             editor={editor}
+            toggleImgForm={() => setShowImgUpload(true)}
           />
           <EditorContent
             tabIndex={tabIndex}

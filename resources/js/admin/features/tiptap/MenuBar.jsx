@@ -45,7 +45,8 @@ import FontSelector from './components/FontSelector';
  */
 function MenuBar({
   editor,
-  setImage
+  setImage,
+  toggleImgForm
 }) {
   const setLink = useCallback(() => {
     const previousUrl = editor.getAttributes('link').href;
@@ -220,9 +221,7 @@ function MenuBar({
           const img = editor.getAttributes('image');
           if (img.src) {
             setImage(img);
-          } else {
-            console.log('add image');
-          }
+          } else if (toggleImgForm) toggleImgForm();
         }}
       >
         <ImageIcon size={18} />
