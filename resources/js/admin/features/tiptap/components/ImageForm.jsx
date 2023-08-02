@@ -23,7 +23,7 @@ function ImageForm({
       const url = URL.createObjectURL(file);
       const image = new Image();
       image.onload = () => {
-        console.log(image.width);
+        // console.log(image.width);
       };
       image.src = url;
       image.width = 120;

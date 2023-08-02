@@ -16,7 +16,7 @@ const options = [
  * @param {props} props
  */
 function FontSelector({ editor }) {
-  console.log(editor.getAttributes('fontFamily'));
+  // console.log(editor.getAttributes('fontFamily'));
   return (
     <div>
       <DropdownMenu

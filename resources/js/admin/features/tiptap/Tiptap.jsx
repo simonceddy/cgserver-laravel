@@ -110,7 +110,7 @@ function Tiptap({
           upload={upload}
           editor={editor}
           onInput={(file) => {
-            console.log(file);
+            // console.log(file);
           }}
           onClose={() => {
             setShowImgUpload(false);
