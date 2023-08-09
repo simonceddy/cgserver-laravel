@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\UploadFile;
+use App\Http\Controllers\{
+    AdminController,
+    FrontController,
+    GetFile,
+    LogoutController,
+    UploadFile
+};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/files/upload', UploadFile::class)
     ->middleware('auth')
     ;
+
+Route::get('/files/get/{filename}', GetFile::class);
 Route::get('/login', '\\App\\Http\\Controllers\\LoginController@show')->name('login');
 
 Route::post('/login', '\\App\\Http\\Controllers\\LoginController@authenticate');

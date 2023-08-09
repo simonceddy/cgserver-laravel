@@ -70,9 +70,7 @@ return [
     */
 
     'links' => [
-        (env('APP_ENV') !== 'production'
-            ? public_path('files/get')
-            : __DIR__ . '/../../public_html/files/get') => storage_path('public'),
+        public_path('files/get') => storage_path('public'),
     ],
 
 ];
