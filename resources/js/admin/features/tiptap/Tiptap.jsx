@@ -3,9 +3,9 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import CharacterCount from '@tiptap/extension-character-count';
 import Link from '@tiptap/extension-link';
-import './Tiptap.scss';
 import { useState } from 'react';
 import TextStyle from '@tiptap/extension-text-style';
+import Color from '@tiptap/extension-color';
 import MenuBar from './MenuBar';
 import CustomHeading from './ext/CustomHeadings';
 import CustomAlign from './ext/CustomAlign';
@@ -15,6 +15,8 @@ import { upload } from '../../util/media';
 import Button from '../../../shared/components/Button';
 import CustomFontFamily from './ext/CustomFontFamily';
 import ImageForm from './components/ImageForm';
+import TiptapContainer from './components/TiptapContainer';
+import './Tiptap.scss';
 
 // EditorView.prototype.updateState = function updateState(state) {
 //   if (!this.docView) return; // This prevents the matchesNode error on hot reloads
@@ -59,11 +61,12 @@ function Tiptap({
       TipTapCustomImage(upload),
       CharacterCount,
       CustomFontFamily,
+      Color,
     ],
     editorProps: {
       attributes: {
         class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl focus:outline-none whitespace-pre-wrap overflow-y-scroll w-full',
-        style: 'height: 450px;'
+        style: 'max-height: 450px;'
       },
     },
     content: content || '',
@@ -135,9 +138,7 @@ function Tiptap({
           image={selectedImg}
         />
       )}
-      <div
-        className="border-2 col border-slate-400 dark:border-slate-600 w-full h-[500px]"
-      >
+      <TiptapContainer>
         <div className="col w-full">
           <MenuBar
             setImage={(i) => {
@@ -179,7 +180,7 @@ function Tiptap({
             Cancel
           </Button>
         </div>
-      </div>
+      </TiptapContainer>
     </>
   );
 }

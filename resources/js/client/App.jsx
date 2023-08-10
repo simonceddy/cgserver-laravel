@@ -9,6 +9,7 @@ import { APP_TITLE } from '../shared/consts';
 import routes from './routes';
 // import CSSTransition from './containers/CSSTransition';
 import Footer from './components/Footer';
+import ErrorBoundary from '../admin/containers/ErrorBoundary';
 
 function App() {
   const outlet = useOutlet();
@@ -16,31 +17,33 @@ function App() {
   const { nodeRef } = routes.find((route) => route.path === location.pathname) ?? {};
   return (
     <Layout>
-      <Header>
-        <AppHeading>
-          {APP_TITLE}
-        </AppHeading>
-        <div className="text-3xl font-bold text-pastel-green font-cursive">
-          Writing in Bass Coast
-        </div>
-        <Nav />
-      </Header>
-      <Content>
-        {/* <SwitchTransition>
-          <CSSTransition
-            key={location.pathname}
-            nodeRef={nodeRef}
-            timeout={60}
-            classNames="page"
-            unmountOnExit
-          > */}
-        <div ref={nodeRef} className="page flex-1 h-[70%] w-auto col justify-start items-center">
-          {outlet}
-        </div>
-        {/* </CSSTransition>
-        </SwitchTransition> */}
-      </Content>
-      <Footer />
+      <ErrorBoundary>
+        <Header>
+          <AppHeading>
+            {APP_TITLE}
+          </AppHeading>
+          <div className="text-3xl font-bold text-pastel-green font-cursive">
+            Writing in Bass Coast
+          </div>
+          <Nav />
+        </Header>
+        <Content>
+          {/* <SwitchTransition>
+            <CSSTransition
+              key={location.pathname}
+              nodeRef={nodeRef}
+              timeout={60}
+              classNames="page"
+              unmountOnExit
+            > */}
+          <div ref={nodeRef} className="page flex-1 h-[70%] w-auto col justify-start items-center">
+            {outlet}
+          </div>
+          {/* </CSSTransition>
+          </SwitchTransition> */}
+        </Content>
+        <Footer />
+      </ErrorBoundary>
     </Layout>
   );
 }

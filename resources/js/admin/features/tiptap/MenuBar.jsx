@@ -33,6 +33,7 @@ import { useCallback } from 'react';
 import TiptapMenuBtn from './components/TiptapMenuBtn';
 import TextSizeSelector from './components/TextSizeSelector';
 import FontSelector from './components/FontSelector';
+import ColourSelector from './components/ColourSelector';
 
 /**
  * @typedef {object} props
@@ -140,6 +141,7 @@ function MenuBar({
       >
         <H5Icon size={18} />
       </TiptapMenuBtn> */}
+      <ColourSelector editor={editor} />
       <TextSizeSelector editor={editor} />
       <FontSelector editor={editor} />
       {/* <TiptapMenuBtn

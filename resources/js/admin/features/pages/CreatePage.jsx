@@ -65,7 +65,7 @@ function CreatePage() {
             <Tiptap
               saveData={saveData}
               onClose={() => {
-                navigate('/pages');
+                navigate('/');
               }}
               content={body}
               setContent={setBody}

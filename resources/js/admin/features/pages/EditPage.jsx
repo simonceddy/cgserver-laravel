@@ -76,7 +76,7 @@ function EditPage() {
             }}
             saveData={saveData}
             onClose={() => {
-              navigate('/pages');
+              navigate('/');
             }}
           />
           )}
