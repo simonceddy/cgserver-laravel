@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SERVER_URL } from '../../shared/consts';
+import { SERVER_URL } from './consts';
 
 axios.defaults.withCredentials = true;
 

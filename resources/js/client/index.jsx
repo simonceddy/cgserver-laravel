@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { store } from './app/store';
 import '../shared/styles';
 import App from './App';
 import routes from './routes';
@@ -21,7 +23,9 @@ const router = createHashRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 

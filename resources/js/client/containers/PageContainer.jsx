@@ -1,47 +1,25 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useEffect, useState } from 'react';
 import parseHtml from 'html-react-parser';
 import Page from '../components/Page';
 import PageHeading from '../components/PageHeading';
-import { API_URL } from '../../shared/consts';
+// import { API_URL } from '../../shared/consts';
+import { useFetchPageQuery } from '../app/pagesApi';
+import ErrorMessage from '../../admin/components/ErrorMessage';
 
 function PageContainer({ slug = 'home' }) {
-  const [state, setState] = useState({
-    title: '',
-    body: ''
-  });
-  useEffect(() => {
-    let setup = false;
+  const {
+    data, isError, isLoading, error
+  } = useFetchPageQuery({ slug });
 
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`${API_URL}/page/${slug}`, {
-          // TODO headers
-        });
-        if (res.status !== 200) setState({ ...state, title: '404 Not Found' }); else {
-          const data = await res.json();
-          setState({ ...state, ...data });
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    if (!setup) {
-      fetchData();
-    }
-    return () => {
-      setup = true;
-    };
-  }, []);
-
+  if (isLoading) return 'Loading...';
+  if (isError) return <ErrorMessage error={error} />;
   return (
     <Page>
       <PageHeading>
-        {state.title}
+        {data.title}
       </PageHeading>
       <div className="w-full flex-1">
-        {parseHtml(state.body)}
+        {parseHtml(data.body)}
       </div>
     </Page>
   );
