@@ -11,6 +11,7 @@ const routes = [
     path: '',
     element: <Home />,
     nodeRef: createRef(),
+    slug: 'home',
   },
   {
     key: 'about',
@@ -18,6 +19,7 @@ const routes = [
     path: 'about',
     element: <About />,
     nodeRef: createRef(),
+    slug: 'about',
   },
   {
     key: 'books',
@@ -25,6 +27,7 @@ const routes = [
     path: 'books',
     element: <Books />,
     nodeRef: createRef(),
+    slug: 'books-sales'
   },
   {
     key: 'contact',
@@ -32,6 +35,7 @@ const routes = [
     path: 'contact',
     element: <Contact />,
     nodeRef: createRef(),
+    slug: 'contact',
   },
 ];
 

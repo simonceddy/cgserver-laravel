@@ -8,6 +8,7 @@ export const pagesAPI = createApi({
   }),
   reducerPath: 'pagesAPI',
   tagTypes: ['Page'],
+  keepUnusedDataFor: 600,
   endpoints: (builder) => ({
     fetchPages: builder.query({
       query: () => ({ url: '/' }),
