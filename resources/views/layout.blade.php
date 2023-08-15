@@ -16,10 +16,13 @@
     @viteReactRefresh
     @yield('vite')
 </head>
-<body>
+<body style="visibility: hidden;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
         @yield('content')
     </div>
+    <script>
+        0;
+    </script>
     @stack('scripts')
 </body></html>

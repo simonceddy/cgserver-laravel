@@ -32,3 +32,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+const domReady = (callback) => (
+  document.readyState === 'interactive' || document.readyState === 'complete'
+    ? callback()
+    : document.addEventListener('DOMContentLoaded', callback)
+);
+
+domReady(() => {
+  console.log('make visible', document.body.style.visibility);
+  document.body.style.visibility = 'visible';
+});
