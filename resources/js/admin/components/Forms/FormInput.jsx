@@ -10,7 +10,7 @@ function FormInput({
         {label}
       </span>
       <input
-        className="p-1 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green"
+        className="p-1 rounded-md dark:bg-black dark:text-dandelion border border-cornflower-blue font-sans focus:border-pastel-green"
         type={number ? 'number' : 'text'}
         min={min}
         max={max}

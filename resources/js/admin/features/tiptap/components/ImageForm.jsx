@@ -55,7 +55,7 @@ function ImageForm({
   return (
     <Modal>
       <div
-        className="col p-2 rounded-lg fl bg-aqua-spring border-2 border-cornflower-blue z-50"
+        className="col p-2 rounded-lg fl bg-aqua-spring dark:bg-black border-2 border-cornflower-blue z-50"
       >
         <input type="file" onInput={getImage} />
         <div className="row flex-wrap">

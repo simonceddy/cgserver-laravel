@@ -757,12 +757,30 @@ video {
   height: 1px;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .min-h-\[70\%\] {
   min-height: 70%;
 }
 
 .min-h-full {
   min-height: 100%;
+}
+
+.min-h-\[25\%\] {
+  min-height: 25%;
+}
+
+.min-h-\[75\%\] {
+  min-height: 75%;
+}
+
+.min-h-fit {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 
 .w-\[1\.1rem\] {
@@ -831,6 +849,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .overflow-y-scroll {

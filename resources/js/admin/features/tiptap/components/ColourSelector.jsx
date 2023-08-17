@@ -49,7 +49,7 @@ function ColourSelector({ editor }) {
         <span className="w-[1.1rem] h-[1.1rem] border block border-black" style={{ backgroundColor: clr }} />
       </TiptapMenuBtn>
       {visible && (
-      <div className="absolute top-[101%] z-30 left-[-4%] col justify-start items-start bg-white rounded">
+      <div className="absolute top-[101%] z-30 left-[-4%] col justify-start items-start dark:bg-black bg-white rounded">
         <span className="w-full bg-cornflower-blue/50 p-0.5 mb-0.5 border-b border-black">
           Theme Colours
         </span>

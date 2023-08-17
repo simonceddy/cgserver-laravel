@@ -2,9 +2,14 @@ function Layout({ children }) {
   return (
     <div
       id="layout-container"
-      className="w-full min-h-full flex flex-col justify-center items-center whitespace-nowrap overflow-y-scroll bg-white dark:bg-black dark:text-aqua-spring text-black"
+      className="w-full h-full bg-white dark:bg-black dark:text-aqua-spring text-black whitespace-nowrap overflow-y-auto"
     >
-      {children}
+      <div
+        id="content-resize"
+        className="sm:w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3 mx-auto w-full min-h-full h-fit col justify-start items-center bg-cornflower-blue/20"
+      >
+        {children}
+      </div>
     </div>
   );
 }

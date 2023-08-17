@@ -1,0 +1,13 @@
+.page-content > * > p, .page-content > p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.page-content > * > p > a, .page-content > p > a {
+    text-decoration: underline;
+}
+
+.page-content > * > .content-heading, .page-content > .content-heading {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
