@@ -18,7 +18,7 @@ function Nav() {
           {label}
         </NavLink>
       ))}
-      <a href="https://www.basscoastpost.com/christine-grayden" className="hover:underline text-black active:text-cornflower-blue font-heading font-bold text-xl rounded-lg block p-2">
+      <a href="https://www.basscoastpost.com/christine-grayden" className="hover:underline text-black active:text-cornflower-blue dark:text-dandelion font-heading font-bold text-xl rounded-lg block p-2">
         Blog
       </a>
     </NavBar>

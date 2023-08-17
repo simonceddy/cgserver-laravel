@@ -1,6 +1,7 @@
 import DropdownMenu from '../../../components/Forms/DropdownMenu';
 
 const options = [
+  { value: 'Sen', label: 'Select font...', className: 'font-sans' },
   { value: 'Sen', label: 'Sen', className: 'font-sans' },
   { value: 'Moon Dance', label: 'Moon Dance', className: '' },
   { value: 'Quintessential', label: 'Quintessential', className: '' },
@@ -20,7 +21,7 @@ function FontSelector({ editor }) {
   return (
     <div>
       <DropdownMenu
-        value={editor.isActive('heading') ? editor.getAttributes('heading').level : 0}
+        value={0}
         onChange={(e) => {
           editor.chain().focus().setFontFamily(e.target.value).run();
         }}

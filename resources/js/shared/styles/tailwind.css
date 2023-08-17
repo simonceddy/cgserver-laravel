@@ -931,6 +931,14 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-cornflower-blue\/10 {
+  background-color: rgb(93 171 244 / 0.1);
+}
+
+.bg-cornflower-blue\/20 {
+  background-color: rgb(93 171 244 / 0.2);
+}
+
 .p-0 {
   padding: 0px;
 }
@@ -1074,6 +1082,32 @@ video {
 .active\:text-cornflower-blue:active {
   --tw-text-opacity: 1;
   color: rgb(93 171 244 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-cornflower-blue-dark\/60 {
+    background-color: rgb(76 139 198 / 0.6);
+  }
+
+  .dark\:bg-cornflower-blue-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgb(76 139 198 / var(--tw-bg-opacity));
+  }
+
+  .dark\:text-aqua-spring {
+    --tw-text-opacity: 1;
+    color: rgb(239 250 246 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-dandelion {
+    --tw-text-opacity: 1;
+    color: rgb(254 211 97 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 640px) {

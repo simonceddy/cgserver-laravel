@@ -35,20 +35,20 @@ import { uploadImagePlugin } from './uploadImage';
 const IMAGE_INPUT_REGEX = /!\[(.+|:?)\]\((\S+)(?:(?:\s+)["'](\S+)["'])?\)/;
 
 const classNameFactory = (attributes) => {
-  let classNames = '';
+  let classNames = 'm-2';
   if (attributes.float) {
     switch (attributes.float) {
       case 0:
         classNames += ' float-none';
         break;
       case 1:
-        classNames += ' float-right ml-2';
+        classNames += ' float-right';
         break;
       case 2:
-        classNames += ' float-left mr-2';
+        classNames += ' float-left';
         break;
       case 3:
-        classNames += '';
+        classNames += ' mx-auto';
         break;
       default:
     }

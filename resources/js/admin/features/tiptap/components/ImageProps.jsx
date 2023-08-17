@@ -7,6 +7,7 @@ const wrapOptions = [
   { label: 'No wrap', value: 0 },
   { label: 'Wrap right', value: 1 },
   { label: 'Wrap left', value: 2 },
+  { label: 'Align center', value: 3 },
 ];
 
 function ImageProps({

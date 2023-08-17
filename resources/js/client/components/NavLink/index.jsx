@@ -5,7 +5,7 @@ function NavLink({ children, to = '', onMouseEnter }) {
     <RNavLink
       to={to}
       onMouseEnter={onMouseEnter}
-      className="hover:underline text-black active:text-cornflower-blue font-heading font-bold text-xl rounded-lg block p-2"
+      className="hover:underline dark:text-dandelion text-black active:text-cornflower-blue font-heading font-bold text-xl rounded-lg block p-2"
     >
       {children}
     </RNavLink>

@@ -13,10 +13,11 @@ const CustomHeading = Heading.extend({
         default: null,
         renderHTML(attributes) {
           // console.log(attributes);
+          const c = `content-heading ${attributes.level && headingClassMap[attributes.level]
+            ? headingClassMap[attributes.level]
+            : 'text-5xl'}`;
           return {
-            class: attributes.level && headingClassMap[attributes.level]
-              ? headingClassMap[attributes.level]
-              : 'text-5xl'
+            class: c
           };
         }
       }
