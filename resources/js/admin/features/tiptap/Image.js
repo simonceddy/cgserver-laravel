@@ -47,6 +47,9 @@ const classNameFactory = (attributes) => {
       case 2:
         classNames += ' float-left mr-2';
         break;
+      case 3:
+        classNames += '';
+        break;
       default:
     }
   }
