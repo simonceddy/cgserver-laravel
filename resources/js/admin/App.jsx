@@ -1,9 +1,7 @@
 import {
   NavLink, useLocation, useOutlet
 } from 'react-router-dom';
-import { SwitchTransition } from 'react-transition-group';
 import routes from './routes';
-import CSSTransition from './containers/CSSTransition';
 
 function App() {
   const location = useLocation();
@@ -11,7 +9,7 @@ function App() {
   const { nodeRef } = routes.find((route) => route.path === location.pathname) ?? {};
 
   return (
-    <div className="w-full h-full col justify-center items-center bg-white dark:bg-black dark:text-aqua-spring text-black font-sans overflow-hidden">
+    <div className="w-full h-fit min-h-full col justify-start items-center bg-white dark:bg-black dark:text-aqua-spring text-black font-sans">
       <div className="row">
         {routes.map(({ path, label }) => (label ? (
           <NavLink
@@ -30,19 +28,9 @@ function App() {
         </a>
       </div>
       <div className="col justify-start items-center flex-1 w-full md:w-4/5 xl:w-2/3 relative border-2 rounded-md border-cornflower-blue">
-        <SwitchTransition>
-          <CSSTransition
-            key={location.pathname}
-            nodeRef={nodeRef}
-            timeout={100}
-            classNames="page"
-            unmountOnExit
-          >
-            <div ref={nodeRef} className="page flex-1 col justify-start items-center">
-              {outlet}
-            </div>
-          </CSSTransition>
-        </SwitchTransition>
+        <div ref={nodeRef} className="page flex-1 col justify-start items-center">
+          {outlet}
+        </div>
       </div>
     </div>
   );

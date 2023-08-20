@@ -1,8 +1,5 @@
 @extends('layout')
 @section('title', 'Login')
-@section('vite')
-    @vite('resources/js/shared/index.js')
-@endsection
 @section('content')
 <div class="col justify-center items-center w-full h-full">
     <form

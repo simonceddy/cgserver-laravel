@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     FrontController,
     GetFile,
     LogoutController,
+    PagesController,
     UploadFile
 };
 use Illuminate\Http\Request;
@@ -41,4 +42,6 @@ Route::get('/logout', LogoutController::class)->name('logout');
 Route::get('/admin/{path?}', AdminController::class)
     ->middleware('auth')
     ;
+
+Route::resource('/pages', PagesController::class);
 Route::get('/{path?}', FrontController::class);

@@ -44,7 +44,7 @@ function EditPage() {
   // console.log(body);
   return (
     <ErrorBoundary>
-      <div className="col w-full">
+      <div className="col w-full h-full min-h-full">
         {message && (
         <div className="p-2 col border-cornflower-blue border-2 rounded-md justify-center items-center">
           <div className="mb-2 font-bold">{message}</div>
@@ -66,7 +66,7 @@ function EditPage() {
             setMessage('uploading!');
           }}
         /> */}
-        <div className="row w-full m-2 h-full">
+        <div className="row w-full m-2 h-fit">
           {body && (
           <Tiptap
             content={body}

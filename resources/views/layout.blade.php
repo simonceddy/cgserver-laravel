@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Quintessential&family=Sen:wght@400;700&display=swap" rel="stylesheet">
     <title>@yield('title', 'Christine Grayden')</title>
     @viteReactRefresh
+    @vite('resources/js/shared/index.js')
     @yield('vite')
 </head>
 <body style="visibility: hidden;">

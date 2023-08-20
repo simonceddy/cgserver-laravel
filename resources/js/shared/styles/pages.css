@@ -5,6 +5,7 @@
 
 .page-content > * > p > a, .page-content > p > a {
     text-decoration: underline;
+    text-decoration-color: inherit;
 }
 
 .page-content > * > .content-heading, .page-content > .content-heading {
