@@ -10,7 +10,8 @@ export default defineConfig({
       input: [
         'resources/js/app.jsx',
         'resources/js/adminApp.jsx',
-        'resources/js/shared/index.js'
+        'resources/js/shared/index.js',
+        'resources/js/shared/styles/index.css'
       ],
       refresh: true,
     }),

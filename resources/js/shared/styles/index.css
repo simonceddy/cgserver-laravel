@@ -1,3 +1,6 @@
+@import './tailwind.css';
+@import './pages.css';
+
 html, body, #root {
    width: 100%;
    padding: 0;

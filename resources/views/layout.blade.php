@@ -15,6 +15,7 @@
     <title>@yield('title', 'Christine Grayden')</title>
     @viteReactRefresh
     @vite('resources/js/shared/index.js')
+    @vite('resources/js/shared/styles/index.css')
     @yield('vite')
 </head>
 <body style="visibility: hidden;">
