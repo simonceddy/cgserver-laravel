@@ -65,7 +65,8 @@ function Tiptap({
     ],
     editorProps: {
       attributes: {
-        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl focus:outline-none whitespace-pre-wrap overflow-y-scroll w-full page-content',
+        name: 'body',
+        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl focus:outline-none whitespace-pre-wrap overflow-y-scroll bg-slate-500/100 w-full page-content',
         style: 'max-height: 450px;'
       },
     },
@@ -139,7 +140,7 @@ function Tiptap({
         />
       )}
       <TiptapContainer>
-        <div className="col w-full">
+        <div className="col w-full p-2">
           <MenuBar
             setImage={(i) => {
               setSelectedImg(i);
@@ -160,7 +161,7 @@ function Tiptap({
             {editor.storage.characterCount.words()} words
           </span>
         </div>
-        <div className="row w-full mt-2">
+        {/* <div className="row w-full mt-2">
           <Button
             disabled={!modified}
             onClick={() => {
@@ -179,7 +180,7 @@ function Tiptap({
           >
             Cancel
           </Button>
-        </div>
+        </div> */}
       </TiptapContainer>
     </>
   );

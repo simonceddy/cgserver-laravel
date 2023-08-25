@@ -21,7 +21,7 @@
 <body style="visibility: hidden;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-        @yield('content')
+        @yield('app')
     </div>
     <script>
         0;

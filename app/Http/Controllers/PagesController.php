@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => 'show'
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('pages.index', ['pages' => Page::all(['title', 'slug'])]);
     }
 
     /**
@@ -52,7 +59,14 @@ class PagesController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $body = $request->request->get('body');
+        $page->body = $body;
+        $result = $page->save();
+        if (!$result) {
+            // TODO there has been an error
+        }
+        // TODO confirm saved
+        return redirect('pages');
     }
 
     /**

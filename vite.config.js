@@ -11,6 +11,7 @@ export default defineConfig({
         'resources/js/app.jsx',
         'resources/js/adminApp.jsx',
         'resources/js/shared/index.js',
+        'resources/js/tiptap/index.jsx',
         'resources/js/shared/styles/index.css'
       ],
       refresh: true,

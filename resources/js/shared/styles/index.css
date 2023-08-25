@@ -1,4 +1,4 @@
-@import './tailwind.css';
+@import './tailwind.src.css';
 @import './pages.css';
 
 html, body, #root {

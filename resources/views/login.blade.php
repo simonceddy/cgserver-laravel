@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'Login')
-@section('content')
+@section('app')
 <div class="col justify-center items-center w-full h-full">
     <form
       class="col p-2 justify-center items-center w-96"
