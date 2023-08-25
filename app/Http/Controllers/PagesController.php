@@ -19,7 +19,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('pages.index', ['pages' => Page::all(['title', 'slug'])]);
+        return view('pages.index', ['pages' => Page::all(['title', 'slug', 'updatedAt'])]);
     }
 
     /**
@@ -64,6 +64,7 @@ class PagesController extends Controller
         $result = $page->save();
         if (!$result) {
             // TODO there has been an error
+            return view('pages.edit', $page);
         }
         // TODO confirm saved
         return redirect('pages');

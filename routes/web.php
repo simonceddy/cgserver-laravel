@@ -39,9 +39,7 @@ Route::post('/login', '\\App\\Http\\Controllers\\LoginController@authenticate');
 
 Route::get('/logout', LogoutController::class)->name('logout');
 
-Route::get('/admin/{path?}', AdminController::class)
-    ->middleware('auth')
-    ;
+Route::get('/admin', AdminController::class);
 
 Route::resource('/pages', PagesController::class);
 Route::get('/', FrontController::class);

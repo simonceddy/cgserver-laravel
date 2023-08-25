@@ -11,7 +11,7 @@
             </x-nav.nav-link>
         </x-nav.navbar>
         <div class="col justify-start items-center flex-1 w-full md:w-4/5 xl:w-2/3 relative border-2 rounded-md border-cornflower-blue">
-            <div class="page flex-1 col justify-start items-center">
+            <div class="page flex-1 w-full col justify-start items-center">
                 @yield('content')
             </div>
         </div>
