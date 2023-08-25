@@ -11,7 +11,7 @@
                     Writing in Bass Coast
                 </div>
                 <x-nav.navbar>
-                    <x-nav.nav-link href="/pages/home">
+                    <x-nav.nav-link href="/">
                         Home
                     </x-nav.nav-link>
                     <x-nav.nav-link href="/pages/about">

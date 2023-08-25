@@ -44,4 +44,4 @@ Route::get('/admin/{path?}', AdminController::class)
     ;
 
 Route::resource('/pages', PagesController::class);
-Route::get('/{path?}', FrontController::class);
+Route::get('/', FrontController::class);

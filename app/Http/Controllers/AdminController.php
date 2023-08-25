@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,6 +17,6 @@ class AdminController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('admin');
+        return view('pages.index', ['pages' => Page::all()]);
     }
 }

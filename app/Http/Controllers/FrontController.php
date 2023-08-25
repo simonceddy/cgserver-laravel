@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -11,6 +12,6 @@ class FrontController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('client');
+        return view('pages.show', Page::where('slug', 'home')->first());
     }
 }
