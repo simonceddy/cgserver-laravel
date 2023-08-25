@@ -1,3 +1,3 @@
-<div class="w-full flex-1">
+<div class="w-full p-2 flex-1">
     {!! $body !!}
 </div>
