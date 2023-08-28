@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     GetFile,
     LogoutController,
     PagesController,
-    UploadFile
+    UploadFile,
+    UploadImage
 };
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,14 @@ use Illuminate\Support\Facades\Route;
 //     return ['token' => $token->plainTextToken];
 // });
 
-Route::post('/files/upload', UploadFile::class)
+Route::post('/files/upload', UploadImage::class)
     ->middleware('auth')
     ;
+
+// Route::get('/upload', function () {
+//     return view('imageTest');
+// });
+// Route::post('/upload', UploadImage::class);
 
 Route::get('/files/get/{filename}', GetFile::class);
 Route::get('/login', '\\App\\Http\\Controllers\\LoginController@show')->name('login');
