@@ -23,8 +23,10 @@
     <div id="root">
         @yield('app')
     </div>
+    @include('cookie-consent::index')
     <script>
         0;
     </script>
-    @stack('scripts')
+
+@stack('scripts')
 </body></html>
