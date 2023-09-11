@@ -22,7 +22,7 @@ function ImageProps({
   return (
     <Modal>
       <div
-        className="col p-2 rounded-lg fl bg-aqua-spring dark:bg-black border-2 border-cornflower-blue z-50"
+        className="col p-2 rounded-lg fl bg-aqua-spring border-2 border-cornflower-blue z-50"
       >
         <FormInput
           label="Width (px):"
@@ -54,7 +54,7 @@ function ImageProps({
             Wrap:
           </span>
           <select
-            className="p-1 rounded-md border dark:bg-black dark:text-dandelion border-cornflower-blue font-sans focus:border-pastel-green"
+            className="p-1 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green"
             name="wrap-input"
             id="wrap-input"
             value={attributes.float || 0}

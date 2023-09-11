@@ -2,7 +2,7 @@ function Layout({ children }) {
   return (
     <div
       id="layout-container"
-      className="w-full h-full bg-white dark:bg-black dark:text-aqua-spring text-black whitespace-nowrap overflow-y-auto"
+      className="w-full h-full bg-white text-black whitespace-nowrap overflow-y-auto"
     >
       <div
         id="content-resize"

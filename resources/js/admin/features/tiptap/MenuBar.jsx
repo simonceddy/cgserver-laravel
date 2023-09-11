@@ -76,7 +76,7 @@ function MenuBar({
   }
 
   return (
-    <div className="flex flex-wrap flex-row justify-start items-center border-b-2 border-slate-400 dark:border-slate-600">
+    <div className="flex flex-wrap flex-row justify-start items-center border-b-2 border-slate-400">
       <TiptapMenuBtn
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={editor.isActive('bold') ? 'is-active' : ''}

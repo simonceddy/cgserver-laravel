@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('app')
-    <div class="w-full h-fit min-h-full col justify-start items-center bg-white dark:bg-black dark:text-aqua-spring text-black font-sans">
+    <div class="w-full h-fit min-h-full col justify-start items-center bg-white text-black font-sans">
         <x-nav.navbar>
             <x-nav.nav-link href="/pages">
                 Pages

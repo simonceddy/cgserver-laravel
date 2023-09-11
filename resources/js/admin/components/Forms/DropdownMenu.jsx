@@ -3,7 +3,7 @@ function DropdownMenu({
 }) {
   return (
     <select
-      className={`m-0.5 p-0.5 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green ${className} dark:bg-cornflower-blue-dark dark:text-dandelion`}
+      className={`m-0.5 p-0.5 rounded-md border border-cornflower-blue font-sans focus:border-pastel-green ${className}`}
       value={value}
       onChange={onChange}
     >

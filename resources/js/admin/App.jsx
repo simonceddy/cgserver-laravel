@@ -9,7 +9,7 @@ function App() {
   const { nodeRef } = routes.find((route) => route.path === location.pathname) ?? {};
 
   return (
-    <div className="w-full h-fit min-h-full col justify-start items-center bg-white dark:bg-black dark:text-aqua-spring text-black font-sans">
+    <div className="w-full h-fit min-h-full col justify-start items-center bg-white text-black font-sans">
       <div className="row">
         {routes.map(({ path, label }) => (label ? (
           <NavLink
